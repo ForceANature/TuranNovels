@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HalalGames</title>
+  <!--путь к css-->
+  <link rel="stylesheet" href="MainPage.css">
+  <!--Путь к Swipper для CSS-->
+  <link rel="stylesheet" href="swiper-bundle.min.css">
+  <!--иконки из boxicons-->
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
+</head>
+
+<body>
+  <!--Заголовок-->
+  <header>
+    <div class="nav container">
+      <a href="/" class="logo">Turan<span>Novels</span></a>
+      <!--Лого-->
+      <!--Иконки заголовка-->
+      <div class="nav-icons">
+        <a href="login.html"><i class='bx bxs-user-circle' id="account_icon"><span></span></i></a>
+        <div class="menu-icon">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </div>
+      <div class="menu">
+        <img src="IMG/game.png" alt="">
+        <div class="navbar">
+          <li><a href="/ProfilePage">Profile</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="#trending">Trending</a></li>
+          <li><a href="#new">New Games</a></li>
+          <li><a href="chat1.html">Contact Us</a></li>
+        </div>
+      </div>
+      <!-- <div class="notification">
+        <div class="notification-box">
+          <i class='bx bxs-check-circle'></i>
+          <p>New chapter of "jb" <a href="BaC/chapter4_RB.html">chapter 4</a>. </p>
+        </div>
+        <div class="notification-box box-color">
+          <i class='bx bxs-x-circle'></i>
+          <p>Could not add new Novells.</p>
+        </div>
+      </div> -->
+
+    </div>
+
+
+  </header>
+  <!--Домашняя страница-->
+  <section class="home container" id="home">
+    <img src="IMG/mainpic.jfif" alt="" max-width: '100%' height: 'auto'>
+    <div class="home-text">
+      <h1> <br> </h1>
+      <a href="book1.html" class="btn">Read Now</a>
+    </div>
+  </section>
+
+  <!--Поулярное - ------------------------- -->
+  <section class="trending container" id="trending">
+    <div class="heading">
+      <i class='bx bxs-flame'></i>
+      <h2>Trending Novels</h2>
+    </div>
+    <!--ИГры-->
+    <div class="trending-content swiper">
+      <div class="swiper-wrapper">
+
+        <!--Первая игра-->
+        <% books.forEach(function(book_list){ %>
+        <div class="swiper-slide">
+          <div class="box">
+            <img src="<%= book_list.image %>" alt="">
+            <div class="box-text">
+              <h2><%= book_list.title %></h2>
+              <h3><%= book_list.genre %></h3>
+              <div class="rating-download">
+                <div class="rating">
+                  <i class='bx bxs-star'></i>
+                  <span><%= book_list.rating %></span>
+                </div>
+                <span name='forid'></span>
+                <a href="/BookPreview" class="box-btn">
+                  <i class='bx bx-down-arrow-alt'></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+
+
+      </div>
+    </div>
+
+  </section>
+
+  <!--Новые Игры /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+  <section class="new container" id="new">
+    <div class="heading">
+      <i class='bx bxs-game'></i>
+      <h2>New Novels</h2>
+    </div>
+    <!--Игры-->
+    <div class="new-contant" id="bookparent">
+      <!--Первая игра-->
+
+      <% books.forEach(function(book_list){ %>
+      <div class="box">
+        <img src="<%= book_list.image %>" alt="">
+        <div class="box-text">
+          <h2><%= book_list.title %></h2>
+          <h3><%= book_list.genre %></h3>
+          <div class="rating-download">
+            <div class="rating">
+              <i class='bx bxs-star'></i>
+              <span><%= book_list.rating %></span>
+            </div>
+            <span name='forid'></span>
+            <a href="/BookPreview" class="box-btn">
+              <i class='bx bx-down-arrow-alt'></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+
+    </div>
+  </section>
+  <div class="copyright container">
+    <a href="#" class="logo">MIRAS<span>SUCKS</span> | SE-2101</a>
+    <p>Astana IT University WEB Project</p>
+  </div>
+  <div class="copyright container">
+    <a href="#" class="logo">NARIMAN<span>RULES</span> | SE-2101</a>
+  </div>
+
+  <!--Путь к Swipper для JS-->
+  <script src="swiper-bundle.min.js"></script>
+  <!--путь к js-->
+  <script src="MainPage.js"></script>
+
+</body>
+
+</html>

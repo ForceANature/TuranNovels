@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="ProfilePage.css">
+  <link rel="stylesheet" href="MainPage.css">
+  <!--Путь к Swipper для CSS-->
+  <!--иконки из boxicons-->
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
+</head>
+
+<body>
+  <div class="nav container">
+    <a href="/" class="logo">Turan<span>Novels</span></a>
+    <!--Лого-->
+  </div>
+  <iframe src="https://app.appsmith.com/app/profile-page/page1-62990ee24d56be2131dc67cf?embed=true" height="700" width="100%"></iframe>
+
+  <section class="new container" id="new">
+    <div class="heading">
+      <i class='bx bxs-game'></i>
+      <h2>My Novels</h2>
+    </div>
+    <!--Игры-->
+    <div class="new-contant" id="bookparent">
+      <!--Первая игра-->
+
+      <% profile.forEach(function(mybooks){ %>
+      <div class="box">
+        <img src="<%= mybooks.image %>" alt="">
+        <div class="box-text">
+          <h2><%= mybooks.title %></h2>
+          <h3><%= mybooks.genre %></h3>
+          <div class="rating-download">
+            <div class="rating">
+              <i class='bx bxs-star'></i>
+              <span><%= mybooks.rating %></span>
+            </div>
+            <span name='forid'></span>
+            <a href="/BookPreview" class="box-btn">
+              <i class='bx bx-down-arrow-alt'></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </section>
+
+  <script src="MainPage.js"></script>
+
+
+</body>
+
+</html>
